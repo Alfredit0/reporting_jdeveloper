@@ -1,7 +1,7 @@
 .title { color: #008080 }
 .country { color: #5f9ea0 }
-.column1 { width:10%; text-align: center; }
-.column2 { width:75%; }
+.column1 { width:15%; }
+.column2 { width:70%; }
 .column3 { width:15%; }
 
 p {

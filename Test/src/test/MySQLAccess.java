@@ -13,7 +13,7 @@ public class MySQLAccess {
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
 
-    public void readDataBase() throws Exception {
+    public String readDataBase() throws Exception {
         try {
             // This will load the MySQL driver, each DB has its own driver
             Class.forName("com.mysql.jdbc.Driver");
@@ -27,7 +27,8 @@ public class MySQLAccess {
             // Result set get the result of the SQL query
             resultSet = statement
                     .executeQuery("select * from calius.alumnos");
-            writeResultSet(resultSet);
+            return writeResultSet(resultSet);
+            
         } catch (Exception e) {
             throw e;
         } finally {
@@ -48,24 +49,24 @@ public class MySQLAccess {
         }
     }
 
-    private void writeResultSet(ResultSet resultSet) throws SQLException {
+    private String writeResultSet(ResultSet resultSet) throws SQLException{
+            String rows="";
+            rows=rows+"<tr class=\"movierow\"><th class=\"column2\">Nombre Completo</th><th class=\"column1\">Licenciatura</th><th class=\"column3\">Grupo</th></tr>\n";
         // ResultSet is initially before the first data set
         while (resultSet.next()) {
             // It is possible to get the columns via name
             // also possible to get the columns via the column number
             // which starts at 1
             // e.g. resultSet.getSTring(2);
-            String user = resultSet.getString("alumnoNombre");
-            String website = resultSet.getString("alumnoAp");
-            String summary = resultSet.getString("alumnoAm");
-            String date = resultSet.getString("alumnoLic");
-            String comment = resultSet.getString("alumnoGrupo");
-            System.out.println("User: " + user);
-            System.out.println("Website: " + website);
-            System.out.println("summary: " + summary);
-            System.out.println("Date: " + date);
-            System.out.println("Comment: " + comment);
+            String nom = resultSet.getString("alumnoNombre");
+            String apellP = resultSet.getString("alumnoAp");
+            String apellM = resultSet.getString("alumnoAm");
+            String lic = resultSet.getString("alumnoLic");
+            String grup = resultSet.getString("alumnoGrupo");
+            rows=rows+"<tr class=\"movierow\"><td class=\"column2\">"+nom+" "+apellP+" "+ apellM+"</td><td class=\"column1\">"+
+                 lic+"</td><td class=\"column3\">"+grup+"</td></tr>\n";
         }
+        return rows;
     }
 
     // You need to close the resultSet

@@ -7,6 +7,10 @@ public class Principal {
     }    
         public static void main(String[] args) throws Exception {
             MySQLAccess dao = new MySQLAccess();
-            dao.readDataBase();
+            WriteToFile writerHTML = new WriteToFile();
+            String resultRows=dao.readDataBase();
+            writerHTML.save(resultRows);
+            FillTemplate1 reportBuilder=new FillTemplate1();
+            reportBuilder.runTemplate();            
         }    
 }
