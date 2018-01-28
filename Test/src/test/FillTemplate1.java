@@ -12,10 +12,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FillTemplate1 {
-        public static final String DEST = "/report1.pdf";
-        public static final String PDF =  "/stationery.pdf";
-        public static final String HTML = "/movies.html";
-        public static final String CSS = "/style1.css";
+        public static final String DEST = "C:\\JDeveloper\\mywork\\reporting_jdeveloper\\data/report1.pdf";
+        public static final String PDF =  "C:\\JDeveloper\\mywork\\reporting_jdeveloper\\data/stationery.pdf";
+        public static final String HTML = "C:\\JDeveloper\\mywork\\reporting_jdeveloper\\data/movies.html";
+        public static final String CSS = "C:\\JDeveloper\\mywork\\reporting_jdeveloper\\data/style1.css";
         public void createPdf(String result) throws IOException, DocumentException {
             FillTemplateHelper template = new FillTemplateHelper(PDF);
             template.setSender("Bruno Lowagie\nAdolf Baeyensstraat 121\n9040 Sint-Amandsberg\nBELGIUM");

@@ -2,14 +2,11 @@ package test;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
-
 import com.itextpdf.text.Element;
 import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-
 import com.itextpdf.tool.xml.ElementList;
-
 import com.itextpdf.tool.xml.html.Tags;
 
 import java.io.File;
@@ -17,10 +14,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FillTemplate3 {
-    public static final String DEST = "/report3.pdf";
-       public static final String PDF = "/stationery_landscape.pdf";
-       public static final String HTML = "/movies.html";
-       public static final String CSS = "/style3.css";
+    public static final String DEST = "C:\\JDeveloper\\mywork\\reporting_jdeveloper\\data/report3.pdf";
+       public static final String PDF = "C:\\JDeveloper\\mywork\\reporting_jdeveloper\\data/stationery_landscape.pdf";
+       public static final String HTML = "C:\\JDeveloper\\mywork\\reporting_jdeveloper\\data/movies.html";
+       public static final String CSS = "C:\\JDeveloper\\mywork\\reporting_jdeveloper\\data/style3.css";
        public void createPdf(String result) throws IOException, DocumentException {
            FillTemplateHelper template = new FillTemplateHelper(PDF);
            template.setSender("Bruno Lowagie\nAdolf Baeyensstraat 121\n9040 Sint-Amandsberg\nBELGIUM");
